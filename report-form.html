@@ -38,6 +38,8 @@
                 </div>
 
                 <div class="col-10 p-2">
+                    <img id="sga-main-logo" src="./assets/images/logo.svg" />
+                    
                     <h1 class="fs-3 mt-2 text-center text-primary">
                         Leaves
                     </h1>
@@ -47,49 +49,114 @@
 
         <main id="sga-main-content" class="container-fluid">
             <div class="row">
-                <div class="col-12 p-3">
-
-                    <div class="shadow-sm p-4 mt-4 bg-body rounded">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="mb-3 sga-input-form">
-                                            <label for="checkInInput">Check In</label>
-                                            <input type="datetime-local" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="checkInInput" placeholder="HH:MM">
-                                        </div>
+                <aside id="sga-main-nav-sidebar" class="col-md-2 shadow-sm bg-body">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./home.html">
+                                    <i data-feather="home" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Home
+                                        </label>
                                     </div>
-
-                                    <div class="col-6">
-                                        <div class="mb-3 sga-input-form">
-                                            <label for="checkOutInput">Check Out</label>
-                                            <input type="datetime-local" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="checkOutInput" placeholder="HH:MM">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 sga-input-form">
-                                    <label for="reasonTextArea">Reason</label>
-                                    <textarea class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="reasonTextArea" placeholder="Write here..."></textarea>
-                                </div>
-
-                                <div class="mb-3 sga-input-form">
-                                    <label for="uploadImageFileInput">Upload Image</label>
-                                    <input type="file" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="uploadImageFileInput" placeholder="Choose Image" accept="image/png, image/jpeg" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <a id="submit-button" class="btn btn-primary sga-full-width p-3" href="./check-in.html">
-                                    Submit
                                 </a>
-                            </div>
-                        </div>
-                        
-                    </div>
+                            </li>
+        
+                            <li class="active">
+                                <a class="btn pt-3 pb-3 text-center" href="./leave.html">
+                                    <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Leave
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./availbility.html">
+                                    <i data-feather="calendar" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Availbility
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./check-in.html">
+                                    <i data-feather="check-circle" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Check-In
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./swap.html">
+                                    <i data-feather="minimize-2" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Swap
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
 
+                <div class="col-sm-12 col-md-10">
+                    <div class="row">
+                        <div class="col-12 p-3">
+        
+                            <div class="shadow-sm p-4 mt-4 bg-body rounded">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mb-3 sga-input-form">
+                                                    <label for="checkInInput">Check In</label>
+                                                    <input type="datetime-local" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="checkInInput" placeholder="HH:MM">
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-6">
+                                                <div class="mb-3 sga-input-form">
+                                                    <label for="checkOutInput">Check Out</label>
+                                                    <input type="datetime-local" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="checkOutInput" placeholder="HH:MM">
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="mb-3 sga-input-form">
+                                            <label for="reasonTextArea">Reason</label>
+                                            <textarea class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="reasonTextArea" placeholder="Write here..."></textarea>
+                                        </div>
+        
+                                        <div class="mb-3 sga-input-form">
+                                            <label for="uploadImageFileInput">Upload Image</label>
+                                            <input type="file" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="uploadImageFileInput" placeholder="Choose Image" accept="image/png, image/jpeg" />
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a id="submit-button" class="btn btn-primary sga-full-width p-3" href="./check-in.html">
+                                            Submit
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+        
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

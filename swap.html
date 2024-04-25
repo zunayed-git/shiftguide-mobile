@@ -30,6 +30,8 @@
         <div class="container-fluid">
             <div class="row sga-toolbar shadow-sm">
                 <div class="col-10 p-2">
+                    <img id="sga-main-logo" src="./assets/images/logo.svg" />
+
                     <h1 class="fs-3 mt-2 text-center text-primary">
                         Swap
                     </h1>
@@ -45,57 +47,130 @@
 
         <main id="sga-main-content" class="container-fluid">
             <div class="row">
-                <div class="col-12 p-3">
+                <aside id="sga-main-nav-sidebar" class="col-md-2 shadow-sm bg-body">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./home.html">
+                                    <i data-feather="home" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Home
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./leave.html">
+                                    <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Leave
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./availbility.html">
+                                    <i data-feather="calendar" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Availbility
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./check-in.html">
+                                    <i data-feather="check-circle" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Check-In
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li class="active">
+                                <a class="btn pt-3 pb-3 text-center" href="./swap.html">
+                                    <i data-feather="minimize-2" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Swap
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                
+                <div class="col-sm-12 col-md-10">
+                    <div class="row">
+                        <div class="col-12 d-md-block d-sm-none">
+                            <div class="mb-3 rounded shadow-sm p-2 mt-3 bg-body">
+                                <a id="sga-float-button-add-2" class="btn btn-primary shadow" href="./swap-new.html">
+                                    <i data-feather="plus" style="width: 1.5em; height: 1.5em;"></i> Add New
+                                </a>
+                            </div>
+                        </div>
 
-                    <ul class="sga-main-content-nav nav nav-pills mb-3 rounded shadow-sm" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">All</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-approved-tab" data-bs-toggle="pill" data-bs-target="#pills-approved" type="button" role="tab" aria-controls="pills-approved" aria-selected="false">Approved</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button" role="tab" aria-controls="pills-pending" aria-selected="false">Pending</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-rejected-tab" data-bs-toggle="pill" data-bs-target="#pills-rejected" type="button" role="tab" aria-controls="pills-rejected" aria-selected="false">Rejected</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-                            <div class="sga-tab-pane-content">
-                                <div class="sgapp-no-content text-center text-muted">
-                                    There is no more request here...
+                        <div class="col-12 p-3">
+        
+                            <ul class="sga-main-content-nav nav nav-pills mb-3 rounded shadow-sm" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">All</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-approved-tab" data-bs-toggle="pill" data-bs-target="#pills-approved" type="button" role="tab" aria-controls="pills-approved" aria-selected="false">Approved</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button" role="tab" aria-controls="pills-pending" aria-selected="false">Pending</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-rejected-tab" data-bs-toggle="pill" data-bs-target="#pills-rejected" type="button" role="tab" aria-controls="pills-rejected" aria-selected="false">Rejected</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                                    <div class="sga-tab-pane-content">
+                                        <div class="sgapp-no-content text-center text-muted">
+                                            There is no more request here...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
+                                    <div class="sga-tab-pane-content">
+                                        <div class="sgapp-no-content text-center text-muted">
+                                            There is no more request here...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+                                    <div class="sga-tab-pane-content">
+                                        <div class="sgapp-no-content text-center text-muted">
+                                            There is no more request here...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
+                                    <div class="sga-tab-pane-content">
+                                        <div class="sgapp-no-content text-center text-muted">
+                                            There is no more request here...
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
-                            <div class="sga-tab-pane-content">
-                                <div class="sgapp-no-content text-center text-muted">
-                                    There is no more request here...
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
-                            <div class="sga-tab-pane-content">
-                                <div class="sgapp-no-content text-center text-muted">
-                                    There is no more request here...
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
-                            <div class="sga-tab-pane-content">
-                                <div class="sgapp-no-content text-center text-muted">
-                                    There is no more request here...
-                                </div>
-                            </div>
+        
+                            <a id="sga-float-button-add" class="btn btn-primary shadow d-md-none d-sm-block" href="./swap-new.html">
+                                <i data-feather="plus" style="width: 1.5em; height: 1.5em;"></i>
+                            </a>
+        
                         </div>
                     </div>
-
-                    <a id="sga-float-button-add" class="btn btn-primary shadow" href="./swap-new.html">
-                        <i data-feather="plus" style="width: 1.5em; height: 1.5em;"></i>
-                    </a>
-
                 </div>
             </div>
         </main>

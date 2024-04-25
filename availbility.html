@@ -30,6 +30,8 @@
         <div class="container-fluid">
             <div class="row sga-toolbar shadow-sm">
                 <div class="col-10 p-2">
+                    <img id="sga-main-logo" src="./assets/images/logo.svg" />
+
                     <h1 class="fs-3 mt-2 text-center text-primary">
                         Availbility
                     </h1>
@@ -44,13 +46,76 @@
         </div>
 
         <main id="sga-main-content" class="container-fluid">
-            <div>
-                <div class="shadow-sm p-3 mb-5 mt-4 bg-body rounded">
-                    <div class="row">
-                        <div class="col-12">
+            <div class="row">
+                <aside id="sga-main-nav-sidebar" class="col-md-2 shadow-sm bg-body">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./home.html">
+                                    <i data-feather="home" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Home
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./leave.html">
+                                    <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Leave
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li class="active">
+                                <a class="btn pt-3 pb-3 text-center" href="./availbility.html">
+                                    <i data-feather="calendar" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Availbility
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./check-in.html">
+                                    <i data-feather="check-circle" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Check-In
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+        
+                            <li>
+                                <a class="btn pt-3 pb-3 text-center" href="./swap.html">
+                                    <i data-feather="minimize-2" style="width: 1.5em; height: 1.5em;"></i>
+                                    <div>
+                                        <label>
+                                            Swap
+                                        </label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
 
-                            <div id='calendar'></div>
-
+                <div class="col-sm-12 col-md-10">
+                    <div class="shadow-sm p-3 mb-5 mt-4 bg-body rounded">
+                        <div class="row">
+                            <div class="col-12">
+    
+                                <div id='calendar'></div>
+    
+                            </div>
                         </div>
                     </div>
                 </div>

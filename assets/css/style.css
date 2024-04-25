@@ -1,10 +1,12 @@
-:root {
+:root
+{
     --primaryColor: #2583a7;
     --primaryColorHover: #16a085;
     --primaryColorActive: #1abc9c;
     --inputBackgroundColor: #f1f4f9;
     --navColor: gray;
     --mainBackgroundColor: #f1f5f9;
+    --boxShadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
 }
 
 body
@@ -157,17 +159,11 @@ body
     font-family: "Roboto Condensed", sans-serif;
 }
 
-.fc-view-container,
-.fc-view-container *
-{
-    border-color: transparent !important;
-}
-
 .fc-today
 {
     background-color: var(--primaryColor) !important;
     color: #fff;
-}
+} 
 
 .sga-main-content-nav
 {
@@ -231,4 +227,123 @@ textarea
 .sga-tab-pane-content
 {
     height: calc(100vh - 15em);
+}
+
+@media only screen and (max-width: 767px)
+{
+    .fc-view-container,
+    .fc-view-container *
+    {
+        border-color: transparent !important;
+    }
+
+    #sga-main-nav-sidebar,
+    #sga-main-logo
+    {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    main > .row > .col-sm-12 > .row
+    {
+        position: relative !important;
+    }
+
+    #sga-login-wrapper
+    {
+        max-width: 50%;
+        background-color: #fff;
+        padding: 3em;
+        border-radius: 0.5em;
+        box-shadow: var(--boxShadow);
+    }
+
+    #sga-bottom-nav
+    {
+        display: none;
+    }
+
+    .sga-default-body
+    {
+        background-color: var(--mainBackgroundColor) !important;
+    }
+
+    #sga-main-content,
+    #sga-main-nav-sidebar
+    {
+        height: calc(100vh - 4.3em);
+    }
+
+    .sga-md-scroll
+    {
+        height: calc(100vh - 6.2em);
+    }
+
+    .sga-md-scroll
+    {
+        overflow-y: auto;
+    }
+
+    #sga-main-nav-sidebar ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+
+    #sga-main-nav-sidebar ul li a > div
+    {
+        display: inline-block;
+    }
+
+    #sga-main-nav-sidebar li a
+    {
+        color: gray;
+        display: block;
+        text-align: left !important;
+    }
+
+    #sga-main-nav-sidebar .active a
+    {
+        color: var(--primaryColor);
+    }
+
+    #sga-main-nav-sidebar a:hover
+    {
+        background-color: var(--primaryColor);
+        color: #fff;
+    }
+
+    #sga-main-nav-sidebar a:active
+    {
+        background-color: var(--primaryColorHover);
+        color: #fff;
+    }
+
+    .sga-md-mt-2
+    {
+        margin-top: 2em;
+    }
+
+    .sga-md-mt-4
+    {
+        margin-top: 4em;
+    }
+
+    #sga-main-logo
+    {
+        width: 4em;
+        position: absolute;
+        left: 1.5em;
+        top: 1em;
+    }
+}
+
+@media only screen and (min-width: 1600px)
+{
+    #sga-login-wrapper
+    {
+        max-width: 30%;
+    }
 }
