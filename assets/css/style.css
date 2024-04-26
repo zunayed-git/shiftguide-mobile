@@ -7,7 +7,7 @@
     --navColor: gray;
     --mainBackgroundColor: #f1f5f9;
     --boxShadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
-    --calendarEventColor: var(--calendarEventColor);
+    --calendarEventColor: #f39c12;
 }
 
 body
@@ -140,6 +140,19 @@ body
     fill: gray !important;
 }
 
+#sga-secondary-avatar img
+{
+    width: 1em;
+    height: auto;
+    margin-right: 0.25em;
+}
+
+#sga-secondary-avatar h2
+{
+    display: inline-block;
+    margin-top: 0.5em !important;
+}
+
 .sga-text-narrow
 {
     font-family: "Roboto Condensed", sans-serif;
@@ -236,6 +249,11 @@ textarea
     height: calc(100vh - 15em);
 }
 
+.sga-event-day-wrapper
+{
+    background-color: var(--calendarEventColor) !important;
+}
+
 @media only screen and (max-width: 767px)
 {
     .fc-view-container,
@@ -264,6 +282,11 @@ textarea
     {
         height: calc(100vh * 0.5) !important;
     }
+
+    .sga-full-width-sm
+    {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 768px)
@@ -280,6 +303,10 @@ textarea
         padding: 3em;
         border-radius: 0.5em;
         box-shadow: var(--boxShadow);
+        position: absolute;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
     }
 
     #sga-bottom-nav
@@ -366,6 +393,12 @@ textarea
         position: absolute;
         right: 5em;
         top: 0.5em;
+    }
+
+    #sga-page-title
+    {
+        text-align: left !important;
+        margin-left: 20%;
     }
 }
 

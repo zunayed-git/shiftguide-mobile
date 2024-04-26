@@ -17,6 +17,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-avatar@latest/dist/avatar.min.css" rel="stylesheet">
 
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        
         <!-- Fullcalendar -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
 
@@ -32,7 +35,7 @@
                 <div class="col-10 p-2">
                     <img id="sga-main-logo" src="./assets/images/logo.svg" />
 
-                    <h1 class="fs-3 mt-2 text-center text-primary">
+                    <h1 class="fs-3 mt-2 text-center text-primary" id="sga-page-title">
                         My Schedule
                     </h1>
                 </div>
@@ -95,7 +98,7 @@
             
                                 <li>
                                     <a class="btn pt-3 pb-3 text-center" href="./leave.html">
-                                        <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                                        <i class="bi bi-box-arrow-left" style="font-size: 1.5em; margin-right: 0.25em;"></i>
                                         <div>
                                             <label>
                                                 Leave
@@ -258,7 +261,7 @@
 
                     <li>
                         <a class="btn pt-3 pb-3 text-center" href="./leave.html">
-                            <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                            <i class="bi bi-box-arrow-left" style="font-size: 1.5em; margin-right: 0.25em;"></i>
                             <div>
                                 <label>
                                     Leave
@@ -322,6 +325,22 @@
 
             // Calendar
             $(document).ready(function() {
+                let datas = [
+                    {
+                        "id":21,
+                        "organization":"Home Office",
+                        "work_date":"2024-04-28",
+                        "start":"2024-04-28 04:00:00",
+                        "end":"2024-04-28 12:10:00"
+                    },
+                    {
+                        "id":20,
+                        "organization":"Home Office",
+                        "work_date":"2024-04-27",
+                        "start":"2024-04-27 04:21:00",
+                        "end":"2024-04-27 10:25:00"
+                    }
+                ];
 
                 let calendar = $('#calendar').fullCalendar({
                     editable:false,
@@ -330,10 +349,81 @@
                         center: 'title',
                         right: 'next'
                     },
-                    firstDay: 1
-                });
+                    firstDay: 1,
+                    events:datas,
 
+                    eventRender: function(event, element) {
+                        element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + '><i class="fa-solid fa-user"></i> '+event.title+'<br>'
+                            +'<i class="fa-solid fa-user"></i> '+event.staff_number+'<br>'
+                            +'<i class="fa-regular fa-clock"></i>  '+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
+                            + '<i class="fa-regular fa-clock"></i>  '+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
+                    },
+
+                    eventMouseover: function(event, jsEvent, view) {
+                        $(this).addClass('hover');
+                        //console.log(view)
+                        $(this).tooltip({
+                            title: '<i class="fa-solid fa-user"></i> Staff Name: '+event.title+'<br>'
+                                + '<i class="fa-solid fa-user"></i> Staff ID: '+event.staff_number+'<br>'
+                                + '<i class="fa-regular fa-clock"></i> Start Time: '+moment(event.start).format('HH:mm')+'<br>'
+                                + '<i class="fa-regular fa-clock"></i> End Time: '+moment(event.end).format('HH:mm')+'<br>'
+                                + '<i class="fa-solid fa-industry"></i> Organization Name: '+event.organization_name+'<br>'
+                                + '<i class="fa-solid fa-location-pin"></i> Address: '+event.address+'<br>'
+                            ,
+                            html: true,
+                            container: 'body',
+                            placement: 'right',
+                            template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="custom-tooltip tooltip-inner"></div></div>',
+                        }).tooltip('show');
+                    },
+                    eventMouseout: function(event, jsEvent, view) {
+                        // Remove the hover effect when the mouse leaves
+                        $(this).removeClass('hover');
+                        $(this).tooltip('hide');
+                    },
+                    timeFormat: 'H(:mm)',
+
+                    eventClick:function(event)
+                    {
+                        // let eventId = event.id;
+                        
+                        // console.log("Open modal for " + eventId);
+
+                        // const myModal = new bootstrap.Modal(document.getElementById('editEventModal'));
+
+                        // myModal.show();
+                    }
+                });
             });
+
+            setTimeout(() => {
+
+                let calendarEvents = document.querySelectorAll(".sga-event-day");
+                let calendarDays = document.querySelectorAll(".fc-day");
+
+                if ((calendarEvents != null) && (calendarEvents.length > 0))
+                {
+                    calendarEvents.forEach(eventElement => {
+                        let date = eventElement.getAttribute("data-date");
+
+                        for (const dayItem of calendarDays)
+                        {
+                            const dateOfTheDay = dayItem.getAttribute("data-date");
+
+                            if (dateOfTheDay === date)
+                            {
+                                if (!dayItem.classList.contains("sga-event-day-wrapper"))
+                                {
+                                    dayItem.classList.add("sga-event-day-wrapper");
+                                }
+
+                                break;
+                            }
+                        }
+                    });
+                }
+
+            }, 500);
         </script>
     </body>
 </html>

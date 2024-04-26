@@ -16,6 +16,9 @@
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-avatar@latest/dist/avatar.min.css" rel="stylesheet">
+        
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
         <!-- Fullcalendar -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
@@ -32,7 +35,7 @@
                 <div class="col-10 p-2">
                     <img id="sga-main-logo" src="./assets/images/logo.svg" />
 
-                    <h1 class="fs-3 mt-2 text-center text-primary">
+                    <h1 class="fs-3 mt-2 text-center text-primary" id="sga-page-title">
                         Availbility
                     </h1>
                 </div>
@@ -75,7 +78,7 @@
         
                             <li>
                                 <a class="btn pt-3 pb-3 text-center" href="./leave.html">
-                                    <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                                    <i class="bi bi-box-arrow-left" style="font-size: 1.5em; margin-right: 0.25em;"></i>
                                     <div>
                                         <label>
                                             Leave
@@ -164,7 +167,7 @@
 
                     <li>
                         <a class="btn pt-3 pb-3 text-center" href="./leave.html">
-                            <i data-feather="corner-right-down" style="width: 1.5em; height: 1.5em;"></i>
+                            <i class="bi bi-box-arrow-left" style="font-size: 1.5em; margin-right: 0.25em;"></i>
                             <div>
                                 <label>
                                     Leave
@@ -211,7 +214,7 @@
 
         <!-- Edit Event Modal -->
         <div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5 text-primary text-center" id="editEventModalLabel">Shift Time</h1>
@@ -235,9 +238,8 @@
                         </div>
                     </div>
                     <div class="text-center p-3">
-                        <button type="button" class="btn btn-secondary mt-2 mb-2" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-outline-danger mt-2 mb-2">Delete</button>
-                        <a type="button" class="btn btn-primary mt-2 mb-2" href="./availbility-new.html">Edit</a>
+                        <button type="button" class="btn btn-outline-danger m-1">Delete</button>
+                        <a type="button" class="btn btn-primary m-1" href="./availbility-new.html">Edit</a>
                     </div>
                 </div>
             </div>
@@ -290,10 +292,10 @@
                     events:datas,
 
                     eventRender: function(event, element) {
-                        element.find('.fc-title').html('<i class="fa-solid fa-user"></i> '+event.title+'<br>'
+                        element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + '><i class="fa-solid fa-user"></i> '+event.title+'<br>'
                             +'<i class="fa-solid fa-user"></i> '+event.staff_number+'<br>'
                             +'<i class="fa-regular fa-clock"></i>  '+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
-                            + '<i class="fa-regular fa-clock"></i>  '+'End Time: '+moment(event.end).format('HH:mm'));
+                            + '<i class="fa-regular fa-clock"></i>  '+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
                     },
 
                     eventMouseover: function(event, jsEvent, view) {
@@ -332,6 +334,35 @@
                     }
                 });
             });
+
+            setTimeout(() => {
+
+                let calendarEvents = document.querySelectorAll(".sga-event-day");
+                let calendarDays = document.querySelectorAll(".fc-day");
+
+                if ((calendarEvents != null) && (calendarEvents.length > 0))
+                {
+                    calendarEvents.forEach(eventElement => {
+                        let date = eventElement.getAttribute("data-date");
+
+                        for (const dayItem of calendarDays)
+                        {
+                            const dateOfTheDay = dayItem.getAttribute("data-date");
+
+                            if (dateOfTheDay === date)
+                            {
+                                if (!dayItem.classList.contains("sga-event-day-wrapper"))
+                                {
+                                    dayItem.classList.add("sga-event-day-wrapper");
+                                }
+
+                                break;
+                            }
+                        }
+                    });
+                }
+
+            }, 500);
         </script>
     </body>
 </html>
