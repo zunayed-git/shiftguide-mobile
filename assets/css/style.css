@@ -7,6 +7,7 @@
     --navColor: gray;
     --mainBackgroundColor: #f1f5f9;
     --boxShadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+    --calendarEventColor: var(--calendarEventColor);
 }
 
 body
@@ -165,6 +166,12 @@ body
     color: #fff;
 } 
 
+.fc-day-grid-event
+{
+    background-color: #f39c12 !important;
+    border-color: #f39c12 !important;
+}
+
 .sga-main-content-nav
 {
     background: #fff !important;
@@ -251,6 +258,11 @@ textarea
     .sga-toolbar-lg
     {
         display: none !important;
+    }
+
+    .fc-scroller.fc-day-grid-container
+    {
+        height: calc(100vh * 0.5) !important;
     }
 }
 
