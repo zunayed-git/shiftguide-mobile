@@ -338,6 +338,11 @@ textarea
         left: 1.5em;
         top: 1em;
     }
+
+    .sga-toolbar-lg
+    {
+        display: none !important;
+    }
 }
 
 @media only screen and (min-width: 1600px)
