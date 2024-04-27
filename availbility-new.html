@@ -32,6 +32,9 @@
         <!-- Datetime Picker -->
         <link rel="stylesheet" href="./assets/lib/datetimepicker/jquery.datetimepicker.min.css">
 
+        <!-- Timepicker -->
+        <link rel="stylesheet" href="./assets/lib/timepicker/css/timepicker.min.css">
+
         <!-- Feather Icon -->
         <script src="https://unpkg.com/feather-icons"></script>
 
@@ -275,6 +278,10 @@
         <!-- Date time picker -->
         <script src="./assets/lib/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 
+        <!-- Timepicker -->
+        <script src="./assets/lib/timepicker/js/timepicker.min.js"></script>
+
+
         <script type="text/javascript">
             // Load icons
             feather.replace();
@@ -283,8 +290,11 @@
             $("document").ready(function () {
                 $("#timeInput").datepicker({defaultDate: null, firstDay: 1});
 
-                $("#fromInput").datetimepicker({dayOfWeekStart: 1});
-                $("#toInput").datetimepicker({dayOfWeekStart: 1});
+                // $("#fromInput").datetimepicker({dayOfWeekStart: 1});
+                // $("#toInput").datetimepicker({dayOfWeekStart: 1});
+
+                $('#fromInput').timepicker();
+                $('#toInput').timepicker();
             });
         </script>
     </body>
