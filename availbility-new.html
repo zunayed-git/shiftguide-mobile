@@ -26,6 +26,12 @@
         <!-- Fullcalendar -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
 
+        <!-- jQuery UI -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+        <!-- Datetime Picker -->
+        <link rel="stylesheet" href="./assets/lib/datetimepicker/jquery.datetimepicker.min.css">
+
         <!-- Feather Icon -->
         <script src="https://unpkg.com/feather-icons"></script>
 
@@ -150,21 +156,23 @@
         
                                         <div class="mb-3 sga-input-form">
                                             <label for="timeInput">Availibility Date</label>
-                                            <input type="date" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="timeInput" placeholder="YYYY/MM/DD">
+                                            <!-- <input type="date" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="timeInput" placeholder="YYYY/MM/DD"> -->
+
+                                            <input id="timeInput" type="text" class="form-control p-3 mt-2 mb-4 sga-mobile-input" placeholder="YYYY/MM/DD" />
                                         </div>
         
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="mb-3 sga-input-form">
                                                     <label for="fromInput">From</label>
-                                                    <input type="datetime-local" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="fromInput" placeholder="HH:MM">
+                                                    <input type="text" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="fromInput" placeholder="HH:MM">
                                                 </div>
                                             </div>
         
                                             <div class="col-6">
                                                 <div class="mb-3 sga-input-form">
                                                     <label for="toInput">To</label>
-                                                    <input type="datetime-local" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="toInput" placeholder="HH:MM">
+                                                    <input type="text" class="form-control p-3 mt-2 mb-4 sga-mobile-input" id="toInput" placeholder="HH:MM">
                                                 </div>
                                             </div>
                                         </div>
@@ -261,9 +269,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
+        <!-- jQuery UI -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <!-- Date time picker -->
+        <script src="./assets/lib/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+
         <script type="text/javascript">
             // Load icons
             feather.replace();
+
+            // Datepicker
+            $("document").ready(function () {
+                $("#timeInput").datepicker({defaultDate: null, firstDay: 1});
+
+                $("#fromInput").datetimepicker({dayOfWeekStart: 1});
+                $("#toInput").datetimepicker({dayOfWeekStart: 1});
+            });
         </script>
     </body>
 </html>
