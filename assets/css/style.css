@@ -353,6 +353,12 @@ textarea
         text-align: left !important;
     }
 
+    #sga-main-nav-sidebar li,
+    #sga-main-nav-sidebar li *
+    {
+        cursor: pointer !important;
+    }
+
     #sga-main-nav-sidebar .active a
     {
         color: var(--primaryColor);
