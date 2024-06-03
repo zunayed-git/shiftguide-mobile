@@ -325,22 +325,7 @@
 
             // Calendar
             $(document).ready(function() {
-                let datas = [
-                    {
-                        "id":21,
-                        "organization":"Home Office",
-                        "work_date":"2024-04-28",
-                        "start":"2024-04-28 04:00:00",
-                        "end":"2024-04-28 12:10:00"
-                    },
-                    {
-                        "id":20,
-                        "organization":"Home Office",
-                        "work_date":"2024-04-27",
-                        "start":"2024-04-27 04:21:00",
-                        "end":"2024-04-27 10:25:00"
-                    }
-                ];
+                let datas = [{"id":8,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-03 15:00:00","end":"2024-06-03 20:00:00","work_date":"2024-06-03","organization_name":"Appgle","color":"#b28585","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"B\/9 BADC Staff Quarter, Principal Abul Kashem Road, Mirpur 1","zip_code":"1216","country":"Bangladesh","province":"In tempora animi ul","kvk_number":"60","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":""},{"id":1,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-05 18:30:00","end":"2024-06-05 22:50:00","work_date":"2024-06-05","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":14,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-15 11:30:00","end":"2024-06-15 11:00:00","work_date":"2024-06-15","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":17,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-16 13:56:00","end":"2024-06-16 19:59:00","work_date":"2024-06-16","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":15,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-17 11:30:00","end":"2024-06-17 11:00:00","work_date":"2024-06-17","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":16,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-18 11:30:00","end":"2024-06-18 11:00:00","work_date":"2024-06-18","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":18,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-19 12:00:00","end":"2024-06-19 11:55:00","work_date":"2024-06-19","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""}];
 
                 let calendar = $('#calendar').fullCalendar({
                     editable:false,
@@ -353,6 +338,8 @@
                     events:datas,
 
                     eventRender: function(event, element) {
+                        console.log(event);
+
                         element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + '><i class="fa-solid fa-user"></i> '+event.title+'<br>'
                             +'<i class="fa-solid fa-user"></i> '+event.staff_number+'<br>'
                             +'<i class="fa-regular fa-clock"></i>  '+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'

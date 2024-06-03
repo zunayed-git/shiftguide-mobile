@@ -181,8 +181,16 @@ body
 
 .fc-day-grid-event
 {
-    background-color: #f39c12 !important;
-    border-color: #f39c12 !important;
+    /* background-color: var(--calendarEventColor) !important;
+    border-color: var(--calendarEventColor) !important;  */
+
+    background-color: transparent !important;
+    border-color: transparent !important; 
+}
+
+.fc-day-grid-event .fc-time
+{
+    display: none;
 }
 
 .sga-main-content-nav
@@ -251,12 +259,7 @@ textarea
 
 .sga-event-day-wrapper
 {
-    background-color: var(--calendarEventColor) !important;
-}
-
-.fc-day-grid-event .fc-time
-{
-    display: none;
+    /* background-color: var(--calendarEventColor) !important; */
 }
 
 @media only screen and (max-width: 767px)
@@ -411,7 +414,7 @@ textarea
         text-align: left !important;
         margin-left: 20%;
     }
-
+    
     #calendar .fc-view-container
     {
         border-radius: 0.5em;
@@ -460,4 +463,9 @@ textarea
     {
         max-width: 30%;
     }
+}
+
+.sga-event-day *
+{
+    color: red !important;
 }
