@@ -292,7 +292,7 @@
                     events:datas,
 
                     eventRender: function(event, element) {
-                        element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + '><i class="fa-solid fa-user"></i> '+event.title+'<br>'
+                        element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + ' data-event-type="' + event.type + '"><i class="fa-solid fa-user"></i> '+event.title+'<br>'
                             +'<i class="fa-solid fa-user"></i> '+event.staff_number+'<br>'
                             +'<i class="fa-regular fa-clock"></i>  '+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
                             + '<i class="fa-regular fa-clock"></i>  '+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
@@ -337,6 +337,23 @@
 
             setTimeout(() => {
 
+                const calendarButtons = document.querySelectorAll(".fc-button");
+
+                if ((calendarButtons != null) && (calendarButtons.length > 0))
+                {
+                    calendarButtons.forEach(calendarButton => {
+                        calendarButton.addEventListener("click", event => {
+                            refreshEventColor();
+                        });
+                    });
+                }
+
+            }, 500);
+
+            function refreshEventColor()
+            {
+                setTimeout(() => {
+
                 let calendarEvents = document.querySelectorAll(".sga-event-day");
                 let calendarDays = document.querySelectorAll(".fc-day");
 
@@ -344,6 +361,7 @@
                 {
                     calendarEvents.forEach(eventElement => {
                         let date = eventElement.getAttribute("data-date");
+                        let eventType = eventElement.getAttribute("data-event-type");
 
                         for (const dayItem of calendarDays)
                         {
@@ -351,10 +369,23 @@
 
                             if (dateOfTheDay === date)
                             {
+                                /*
                                 if (!dayItem.classList.contains("sga-event-day-wrapper"))
                                 {
                                     dayItem.classList.add("sga-event-day-wrapper");
+                                }*/
+
+                                console.log(eventType);
+
+                                let eventColor = "";
+
+                                if (eventType == "undefined")
+                                {
+                                    eventColor = "#ff0000";
                                 }
+                                
+                                dayItem.style.background = eventColor;
+                                eventElement.style.background = eventColor;
 
                                 break;
                             }
@@ -362,7 +393,208 @@
                     });
                 }
 
-            }, 500);
+                }, 500);
+            }
+
+            refreshEventColor();
+
+            /*
+        // Load icons
+        feather.replace();
+        // Calendar
+        $(document).ready(function() {
+
+            $("#timeInput").datepicker({
+                defaultDate: null,
+                firstDay: 1,
+                minDate:1
+            });
+
+            $('#fromInput').timepicker();
+            $('#toInput').timepicker();
+
+            $('body').on('click','.delete-item',function(){
+                let item_id=$(this).attr('item_id');
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    $(this).prop('disabled', true)
+                    $(".spinner-border-delete").removeClass('d-none')
+                    if (result.value) {
+                        $.ajax({
+                            url:$(this).attr('data-action'),
+                            method:'POST',
+                            data:{item_id:item_id},
+                            success:function(response){
+                                Toast.fire({
+                                    icon: response.type,
+                                    title: response.data
+                                });
+                                setInterval(function (){
+                                    window.location.href="https://younitech.xyz/staff/availability"
+                                },3000)
+                            }
+                        });
+                    }else{
+                        $(this).prop('disabled', false)
+                        $(".spinner-border-delete").addClass('d-none')
+                    }
+                });
+            })
+
+            $('body').on('submit','#formSubmit',function(e){
+                e.preventDefault();
+                let formDta = new FormData(this);
+                $(".submitButton").prop('disabled', true)
+                $(".spinner-border-update").removeClass('d-none')
+
+                $.ajax({
+                    url: $(this).attr('data-action'),
+                    method: $(this).attr('method'),
+                    data: formDta,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:function(response){
+
+                        if (response.status===200){
+                            Toast.fire({
+                                icon: response.type,
+                                title: response.data
+                            });
+                            setInterval(function (){
+                                window.location.href="https://younitech.xyz/staff/availability"
+                            },3000)
+                        }else{
+                            Swal.fire({
+                                icon: response.type,
+                                title: "Some went wrong",
+                                text: response.data
+                            });
+                        }
+                        $(".submitButton").prop('disabled', false)
+                        $(".spinner-border").addClass('d-none')
+
+                    },
+
+                    error:function(error){
+                        if (error.status===422){
+                            $('.remove-error').text('')
+                            let errors=error.responseJSON.errors
+                            $.each(errors, function (key, val) {
+                                $('.error-'+key).text(val[0])
+                            });
+
+                        }else{
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: error.responseJSON.message,
+                            });
+                        }
+                        $(".submitButton").prop('disabled', false)
+                        $(".spinner-border-update").addClass('d-none')
+                    }
+
+                });
+            });
+
+            // full calender
+            let datas = [{"id":20,"work_date":"2024-04-27","start":"2024-04-27 04:21:00","end":"2024-04-27 10:25:00","status":"1"}];
+            let calendar = $('#calendar').fullCalendar({
+                editable:false,
+                header:{
+                    left: 'prev',
+                    center: 'title',
+                    right: 'next'
+                },
+                firstDay: 1,
+                events:datas,
+                eventRender: function(event, element) {
+                    element.find('.fc-title').html('<div class="sga-event-day" data-status='+event.status+' data-date=' + event.work_date + '>'
+                        +'<i class="fa-regular fa-clock"></i>'+'Date: '+event.work_date+'<br/>'
+                        +'<i class="fa-regular fa-clock"></i>'+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
+                        + '<i class="fa-regular fa-clock"></i>'+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
+                },
+
+                eventClick:function(event)
+
+                {
+
+                    if (event.status !==3){
+                        let eventId = event.id;
+                        $.ajax({
+                            url:"https://younitech.xyz/staff/availability-edit",
+                            method:'POST',
+                            data:{eventId:eventId},
+                            success:function(response){
+                                $('.start_time').val(response.data.start_time)
+                                $('.end_time').val(response.data.end_time)
+                                $('.work_date').val(response.data.work_date)
+                                $('.setId').val(response.data.id)
+                                $('.delete-item').attr('item_id',response.data.id)
+
+                                let options='<option value="">Select organization</option>';
+
+                                response.organizations.map((organization,index)=>{
+                                    let select=organization.id==response.data.organization_id ? "selected" : "";
+                                    options+='<option '+select+' value="'+organization.id+'">'+organization.name+'</option>'
+                                })
+                                $('.set-organization').html(options)
+
+                            }
+                        });
+                        const myModal = new bootstrap.Modal(document.getElementById('editEventModal'));
+                        myModal.show();
+                    }
+
+                }
+            });
+        });
+
+
+        setTimeout(() => {
+
+            let calendarEvents = document.querySelectorAll(".sga-event-day");
+            let calendarDays = document.querySelectorAll(".fc-day");
+
+            if ((calendarEvents != null) && (calendarEvents.length > 0))
+            {
+                calendarEvents.forEach(eventElement => {
+                    let date = eventElement.getAttribute("data-date");
+                    let status = eventElement.getAttribute("data-status");
+
+                    for (const dayItem of calendarDays)
+                    {
+                        const dateOfTheDay = dayItem.getAttribute("data-date");
+
+                        if (dateOfTheDay === date)
+                        {
+                            if (!dayItem.classList.contains("sga-event-day-wrapper"))
+                            {
+                                console.log(status)
+                                if (status=="3"){
+                                    dayItem.classList.add("sga-event-day-wrapper-pending")
+
+                                }else{
+                                    dayItem.classList.add("sga-event-day-wrapper");
+                                }
+                            }
+
+                            break;
+                        }
+                    }
+                });
+            }
+
+        },100);
+            */
         </script>
     </body>
 </html>
