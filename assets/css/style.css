@@ -254,9 +254,136 @@ textarea
     background-color: var(--calendarEventColor) !important;
 }
 
-.fc-day-grid-event .fc-time
+#calendar-new .fc-day-grid-event .fc-time
 {
     display: none;
+}
+
+#calendar-new .fc-header-toolbar
+{
+    padding: 1em;
+}
+
+#calendar-new .fc-header-toolbar,
+#calendar-new .fc-view-harness
+{
+    background: #fff;
+    border-radius: 0.5em;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-scroller
+{
+    overflow: visible;
+}
+
+#sgapp-fc-month-select
+{
+    border: none;
+}
+
+#calendar-new .fc-button
+{
+    border: none;
+    color: #374550;
+}
+
+#calendar-new .fc-button.fc-button-active
+{
+    background: #bfe0e9 !important;
+    color: #2583a7;
+}
+
+#calendar-new a
+{
+    text-decoration: none;
+}
+
+#calendar-new .fc-col-header-cell
+{
+    padding: 1em;
+}
+
+#calendar-new .fc-col-header-cell,
+#calendar-new .fc-col-header-cell *
+{
+    color: #374550;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-col-header-cell:nth-child(odd)
+{
+    background: #f9fafc;
+}
+
+#calendar-new .fc-dayGridMonth-view th
+{
+    border: none;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-day
+{
+    border: 1px solid #f1f4f9;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-daygrid-day-number
+{
+    color: #374550;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-day-today
+{
+    background: #374550;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-day-today .fc-daygrid-day-number
+{
+    color: #fff;
+}
+
+#calendar-new .sgapp-event-cell-wrapper
+{
+    padding: 0.25em;
+    overflow: hidden;
+}
+
+#calendar-new .fc-dayGridMonth-view .sgapp-event-cell-wrapper .sgapp-event-title
+{
+    color: #374550;
+    margin-left: 0.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#calendar-new .fc-dayGridMonth-view .sgapp-event-staff-id
+{
+    color: #2583a7;
+}
+
+#calendar-new .fc-dayGridMonth-view .sgapp-event-time
+{
+    background: #fff;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 0.25em;
+    color: #374550;
+    padding: 0.5em;
+    display: inline-block;
+}
+
+#calendar-new .fc-dayGridMonth-view .sgapp-event-cell-column
+{
+    display: inline-block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#calendar-new .fc-dayGridMonth-view .fc-daygrid-dot-event
+{
+    display: none;
+}
+
+#calendar-new .fc-timegrid-axis-cushion
+{
+    color: #2583a7;
 }
 
 @media only screen and (max-width: 767px)

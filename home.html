@@ -144,11 +144,11 @@
                     </aside>
 
                     <div class="col-sm-12 col-md-7">
-                        <div class="shadow-sm p-3 mb-5 bg-body rounded sga-md-mt-2">
+                        <div class="shadow-sm mb-5 sga-md-mt-2">
                             <div class="row">
                                 <div class="col-12">
         
-                                    <div id='calendar'></div>
+                                    <div id='calendar-new'></div>
         
                                 </div>
                             </div>
@@ -317,45 +317,114 @@
     
         <!-- Fullcalendar -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
 
         <script type="text/javascript">
             // Load icons
             feather.replace();
 
             // Calendar
-            $(document).ready(function() {
-                let datas = [{"id":8,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-03 15:00:00","end":"2024-06-03 20:00:00","work_date":"2024-06-03","organization_name":"Appgle","color":"#b28585","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"B\/9 BADC Staff Quarter, Principal Abul Kashem Road, Mirpur 1","zip_code":"1216","country":"Bangladesh","province":"In tempora animi ul","kvk_number":"60","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":""},{"id":1,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-05 18:30:00","end":"2024-06-05 22:50:00","work_date":"2024-06-05","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":14,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-15 11:30:00","end":"2024-06-15 11:00:00","work_date":"2024-06-15","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":17,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-16 13:56:00","end":"2024-06-16 19:59:00","work_date":"2024-06-16","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":15,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-17 11:30:00","end":"2024-06-17 11:00:00","work_date":"2024-06-17","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":16,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-18 11:30:00","end":"2024-06-18 11:00:00","work_date":"2024-06-18","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""},{"id":18,"title":"Kilil Mia","staff_number":"KM149995","first_ame":null,"last_number":null,"email":"kolil@gmail.com","avatar":"mmuvrraq2w1717175686.jpg","start":"2024-06-19 12:00:00","end":"2024-06-19 11:55:00","work_date":"2024-06-19","organization_name":"Microsoft","color":"#262b4d","city":"Sed optio aute labo","address":"Dolores ipsam aspern","zip_code":"49836","country":"Aut incidunt dolori","province":"Eveniet quis ipsa","kvk_number":"456","vat_number":"970","contact_number":"+1 (926) 687-3482","help_line":"+1 (376) 122-4365","fax_number":"+1 (817) 774-4303","telephone":"+1 (376) 122-4365","phone_number":""}];
+            
+            let datas = [{"id":31,"title":"Rasel Rana","staff_number":"DR841530","first_ame":null,"last_number":null,"email":"rasel@gmail.com","avatar":"h0tiswpvfk1712378330.jpg","start":"2024-05-31 00:20:00","end":"2024-05-31 03:15:00","organization_name":"Radision","color":"#31c943","city":"Dhaka","address":"B\/9 BADC Staff Quarter, Principal Abul Kashem Road, Mirpur 1","zip_code":"1216","country":"Bangladesh","province":"MIrpur","kvk_number":"dsdsdsds","vat_number":"sdsd","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (422) 539-4332","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-05-31"},{"id":32,"title":"Rasel Rana","staff_number":"DR841530","first_ame":null,"last_number":null,"email":"rasel@gmail.com","avatar":"h0tiswpvfk1712378330.jpg","start":"2024-06-11 15:00:00","end":"2024-06-11 08:45:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-06-11"},{"id":33,"title":"Staff2 Staff2","staff_number":"SS800316","first_ame":null,"last_number":null,"email":"staff2@gmail.com","avatar":"avkbccyhag1716826736.jpg","start":"2024-06-03 18:30:00","end":"2024-06-03 22:50:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-06-03"},{"id":34,"title":"Hotel Gaon","staff_number":"HG218977","first_ame":null,"last_number":null,"email":"raselrana1000486@gmail.com","avatar":"i1qgakjcmg1716826605.png","start":"2024-06-07 15:15:00","end":"2024-06-08 13:05:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-07"},{"id":35,"title":"Mehedi Hasan","staff_number":"MH593950","first_ame":null,"last_number":null,"email":"mehedi@gmail.com","avatar":"eemuupxro41716916339.png","start":"2024-06-05 18:30:00","end":"2024-06-06 17:00:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-05"},{"id":36,"title":"Ismail Khan","staff_number":"FF863244","first_ame":null,"last_number":null,"email":"ismail@gmail.com","avatar":"k0xtmnuumq1712228736.png","start":"2024-07-10 18:30:00","end":"2024-05-31 21:00:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-07-10"},{"id":37,"title":"Shakib Khan","staff_number":"RR916694","first_ame":null,"last_number":null,"email":"shakib@gmail.com","avatar":"iug0mp2tji1712228375.png","start":"2024-06-18 18:00:00","end":"2024-06-18 21:00:00","organization_name":"Radision","color":"#31c943","city":"Dhaka","address":"B\/9 BADC Staff Quarter, Principal Abul Kashem Road, Mirpur 1","zip_code":"1216","country":"Bangladesh","province":"MIrpur","kvk_number":"dsdsdsds","vat_number":"sdsd","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (422) 539-4332","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-18"},{"id":38,"title":"Ismail Khan","staff_number":"FF863244","first_ame":null,"last_number":null,"email":"ismail@gmail.com","avatar":"k0xtmnuumq1712228736.png","start":"2024-06-20 18:30:00","end":"2024-05-31 21:00:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-06-20"},{"id":39,"title":"Anthony Shoshi","staff_number":"RR777888","first_ame":null,"last_number":null,"email":"antony@gmail.com","avatar":"x0ljgazfel1714228358.jpg","start":"2024-06-21 18:00:00","end":"2024-06-21 21:00:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-21"},{"id":40,"title":"Mehedi Hasan","staff_number":"MH593950","first_ame":null,"last_number":null,"email":"mehedi@gmail.com","avatar":"eemuupxro41716916339.png","start":"2024-06-15 23:55:00","end":"2024-06-16 22:49:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-15"},{"id":41,"title":"Staff2 Staff2","staff_number":"SS800316","first_ame":null,"last_number":null,"email":"staff2@gmail.com","avatar":"avkbccyhag1716826736.jpg","start":"2024-06-20 15:20:00","end":"2024-06-20 23:55:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-20"},{"id":42,"title":"Shakib Khan","staff_number":"RR916694","first_ame":null,"last_number":null,"email":"shakib@gmail.com","avatar":"iug0mp2tji1712228375.png","start":"2024-05-31 09:35:00","end":"2024-05-31 19:00:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-05-31"}];
+            let calendar = null;
 
-                let calendar = $('#calendar').fullCalendar({
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar-new');
+                calendar = new FullCalendar.Calendar(calendarEl, {
                     editable:false,
-                    header:{
-                        left: 'prev',
-                        center: 'title',
-                        right: 'next'
+                    initialView: 'dayGridMonth',
+                    headerToolbar: {
+                        left: '',   //'title'
+                        center: 'dayGridMonth,timeGridWeek,timeGridDay',
+                        right: 'prev,today,next'
                     },
+                    customButtons: {
+                        
+                    },
+                    events: datas,
                     firstDay: 1,
-                    events:datas,
-
-                    eventRender: function(event, element) {
-                        console.log(event);
-
-                        element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + '><i class="fa-solid fa-user"></i> '+event.title+'<br>'
-                            +'<i class="fa-solid fa-user"></i> '+event.staff_number+'<br>'
-                            +'<i class="fa-regular fa-clock"></i>  '+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
-                            + '<i class="fa-regular fa-clock"></i>  '+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
+                    eventTimeFormat: { // like '14:30:00'
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        meridiem: false,
+                        hour12: false
                     },
+                    slotLabelFormat: {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                    },
+                    weekNumbers: true,
+                    dayMaxEventRows: true, // for all non-TimeGrid views
+                    views: {
+                        dayGridMonth: {
+                            dayMaxEventRows: 2, // adjust to 6 only for timeGridWeek/timeGridDay
+                            eventLimit: 2
+                        }
+                    },
+                    allDaySlot: false,
+                    eventDidMount: function(args) {
+                        //console.log(args.el);
+                        //console.log(args.event);
 
-                    eventMouseover: function(event, jsEvent, view) {
-                        $(this).addClass('hover');
+                        let event = args.event;
+
+                        const defaultAvatar = "img/avatar_default.png";
+
+                        let avatar = "";//(event.avatar === null) ? defaultAvatar : `https://schedule.bangladeshbajar.com/backend/staff/${event.extendedProps.avatar}`;
+
+                        avatar = "./assets/images/person-fill.svg";
+
+                        let eventHtml = `
+                            <div class="sgapp-event-cell-wrapper" data-event-type="${event.extendedProps.type}">
+                                <div class="sgapp-event-cell-row">
+                                    <span class="sgapp-event-cell-column">
+                                        <img class="sgapp-event-avatar" src="${avatar}" alt="Staff image">
+                                    </span>
+                                    <span class="sgapp-event-cell-column sgapp-event-title">
+                                        ${event.title}
+                                    </span>
+                                </div>
+
+                                <div class="sgapp-event-cell-row sgapp-event-staff-id">
+                                    ${event.extendedProps.staff_number}
+                                </div>
+
+                                <div class="sgapp-event-cell-row sgapp-event-time">
+                                    <i class="fa-regular fa-clock"></i> ${moment(event.start).format('HH:mm')} ${((moment(event.end).format('HH:mm') !== "Invalid date") ? "- " + moment(event.end).format('HH:mm') : "")}
+                                </div>
+                            </div>
+                        `;
+
+                        args.el.innerHTML = eventHtml;
+
+                    },
+                    eventClick: function(args) {
+                        // console.log('Event: ' + args.event.title);
+                        // console.log('Coordinates: ' + args.jsEvent.pageX + ',' + args.jsEvent.pageY);
+                        // console.log('View: ' + args.view.type);
+
+                        // change the border color just for fun
+                        //args.el.style.border = '1px solid red';
+
+                        let url = `schedules/edit/${event.id}`;
+                        window.location.href = url;
+                    },
+                    eventMouseEnter: function (args) {
+                        // console.log("Mouse enter");
+                        // console.log(args);
+
+                        $(args.el).addClass('hover');
                         //console.log(view)
-                        $(this).tooltip({
+                        $(args.el).tooltip({
                             title: '<i class="fa-solid fa-user"></i> Staff Name: '+event.title+'<br>'
                                 + '<i class="fa-solid fa-user"></i> Staff ID: '+event.staff_number+'<br>'
                                 + '<i class="fa-regular fa-clock"></i> Start Time: '+moment(event.start).format('HH:mm')+'<br>'
                                 + '<i class="fa-regular fa-clock"></i> End Time: '+moment(event.end).format('HH:mm')+'<br>'
                                 + '<i class="fa-solid fa-industry"></i> Organization Name: '+event.organization_name+'<br>'
                                 + '<i class="fa-solid fa-location-pin"></i> Address: '+event.address+'<br>'
+
                             ,
                             html: true,
                             container: 'body',
@@ -363,54 +432,264 @@
                             template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="custom-tooltip tooltip-inner"></div></div>',
                         }).tooltip('show');
                     },
-                    eventMouseout: function(event, jsEvent, view) {
+                    eventMouseLeave: function (args) {
+                        // console.log("Mouse leave");
+                        // console.log(args);
+
                         // Remove the hover effect when the mouse leaves
-                        $(this).removeClass('hover');
-                        $(this).tooltip('hide');
-                    },
-                    timeFormat: 'H(:mm)',
-
-                    eventClick:function(event)
-                    {
-                        // let eventId = event.id;
-                        
-                        // console.log("Open modal for " + eventId);
-
-                        // const myModal = new bootstrap.Modal(document.getElementById('editEventModal'));
-
-                        // myModal.show();
+                        $(args.el).removeClass('hover');
+                        $(args.el).tooltip('hide');
                     }
                 });
+                calendar.render();
             });
 
+            //Add dropdown in the calendar
             setTimeout(() => {
+                const dropdownWrapper = document.querySelector(".fc-toolbar-chunk");
+                
+                const currentYear = new Date().getFullYear();
+                
+                const months = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ];
+                
+                const currentMonth = months[new Date().getMonth()];
 
-                let calendarEvents = document.querySelectorAll(".sga-event-day");
-                let calendarDays = document.querySelectorAll(".fc-day");
-
-                if ((calendarEvents != null) && (calendarEvents.length > 0))
+                const calendarNextMonthButton = document.querySelector(".fc-next-button");
+                const calendarPreviousMonthButton = document.querySelector(".fc-prev-button");
+                const calendarTodayButton = document.querySelector(".fc-today-button");
+                const calendarMonthButton = document.querySelector(".fc-dayGridMonth-button");
+                const calendarWeekButton = document.querySelector(".fc-timeGridWeek-button");
+                const calendarDayButton = document.querySelector(".fc-timeGridDay-button");
+                
+                let optionHtml = "";
+                
+                for (let i = 1; i <= months.length; i++)
                 {
-                    calendarEvents.forEach(eventElement => {
-                        let date = eventElement.getAttribute("data-date");
+                    let month = months[i - 1];
+                    let monthIndex = i;
+                    
+                    if (monthIndex <= 9)
+                    {
+                        monthIndex = `0${i}`;
+                    }
+                    
+                    let defaultSelection = "";
+                    
+                    if (currentMonth === month)
+                    {
+                        defaultSelection = "selected";
+                    }
+                    
+                    optionHtml += getMonthSelectOptionTemplate(currentYear, monthIndex, month, defaultSelection);
+                }
+                
+                dropdownWrapper.innerHTML = `
+                    <select id="sgapp-fc-month-select" class="form-select">
+                        ${optionHtml}
+                    </select>
+                `;
+        
+                const calendarMonthSelect = document.querySelector("#sgapp-fc-month-select");
 
-                        for (const dayItem of calendarDays)
-                        {
-                            const dateOfTheDay = dayItem.getAttribute("data-date");
+                refreshCalendarMonthSelectEvent();
 
-                            if (dateOfTheDay === date)
-                            {
-                                if (!dayItem.classList.contains("sga-event-day-wrapper"))
-                                {
-                                    dayItem.classList.add("sga-event-day-wrapper");
-                                }
+                function getMonthSelectOptionTemplate(year, monthIndex, month, defaultSelection)
+                {
+                    if (defaultSelection === null)
+                    {
+                        defaultSelection = "";
+                    }
 
-                                break;
-                            }
-                        }
+                    return `<option ${defaultSelection} value="${year}-${monthIndex}-01">${month}, ${year}</option>`;
+                }
+
+                function refreshCalendarMonthSelectEvent()
+                {
+                    calendarMonthSelect.addEventListener("change", event => {
+                    
+                        //$('#calendar').fullCalendar('gotoDate', calendarMonthSelect.value);
+                        calendar.gotoDate(calendarMonthSelect.value);
+                        onCalendarDateChanged();
+                        
                     });
                 }
 
+                function getCalendarCurrentDate()
+                {
+                    //let date = new Date($('#calendar').fullCalendar('getDate'));
+                    let date = new Date(calendar.getDate());
+
+                    return date;
+                }
+
+                function getCalendarMonthAsIndex()
+                {
+                    let date = getCalendarCurrentDate();
+                    let monthIndex = date.getMonth();
+
+                    return monthIndex;
+                }
+
+                function refreshCalendarMonthSelect()
+                {
+                    setTimeout(() => {
+                        let date = getCalendarCurrentDate();
+
+                        let monthIndex = date.getMonth() + 1;
+
+                        if (monthIndex <= 9)
+                        {
+                            monthIndex = `0${monthIndex}`;
+                        }
+
+                        let value = `${date.getFullYear()}-${monthIndex}-01`;
+
+                        let options = calendarMonthSelect.querySelectorAll("option");
+
+                        let isMonthFoundInTheSelector = false;
+
+                        if ((options != null) && (options.length > 0))
+                        {
+                            for (let i = 0; i < options.length; i++)
+                            {
+                                let option = options[i];
+                                
+                                if (option.value === value)
+                                {
+                                    isMonthFoundInTheSelector = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (isMonthFoundInTheSelector)
+                        {
+                            calendarMonthSelect.value = value;
+                        }
+                        else
+                        {
+                            let innerHTML = calendarMonthSelect.innerHTML;
+
+                            innerHTML += getMonthSelectOptionTemplate(date.getFullYear(), date.getMonth(), months[date.getMonth()], null);
+
+                            calendarMonthSelect.innerHTML = innerHTML;
+
+                            refreshCalendarMonthSelectEvent();
+
+                            setTimeout(() => {
+                                calendarMonthSelect.value = value;
+                            }, 500);
+                        }
+
+                    }, 500);
+
+                    onCalendarDateChanged();
+                }
+
+                calendarNextMonthButton.addEventListener("click", event => {
+                    refreshCalendarMonthSelect();
+                });
+
+                calendarPreviousMonthButton.addEventListener("click", event => {
+                    refreshCalendarMonthSelect();
+                });
+
+                calendarTodayButton.addEventListener("click", event => {
+                    refreshCalendarMonthSelect();
+                });
+
+                if (calendarMonthButton !== null)
+                {
+                    calendarMonthButton.addEventListener("click", event => {
+                        refreshCalendarMonthSelect();
+                    });
+                }
+
+                if (calendarWeekButton !== null)
+                {
+                    calendarWeekButton.addEventListener("click", event => {
+                        refreshCalendarMonthSelect();
+                    });
+                }
+
+                if (calendarDayButton !== null)
+                {
+                    calendarDayButton.addEventListener("click", event => {
+                        refreshCalendarMonthSelect();
+                    });
+                }
+                
             }, 500);
+
+            
+            function onCalendarDateChanged()
+            {
+                console.log("Date changed");
+
+                setTimeout(() => {
+                    const eventElements = document.querySelectorAll(".sgapp-event-cell-wrapper");
+
+                    if ((eventElements !== null) && (eventElements.length > 0))
+                    {
+                        eventElements.forEach(eventElement => {
+                            setCalendarEventColor(eventElement, "#e5f3f6", "rgba(37, 131, 167, 0.2)");
+                        });
+
+                        eventElements.forEach(eventElement => {
+                            const eventType = eventElement.getAttribute("data-event-type");
+
+                            // Check event condition
+                            if (eventType == "Accepted")
+                            {
+                                setCalendarEventColor(eventElement, "#ff0000"); // color
+                            }
+                        });
+                    }
+                }, 500);
+            }
+
+            // Calendar event type
+            function setCalendarEventColor(eventElement, bgColor, borderColor)
+            {
+                const dayGridEvents = document.querySelectorAll(".fc-daygrid-event");
+
+                if ((dayGridEvents !== null) && (dayGridEvents.length > 0))
+                {
+                    for (let i = 0; i < dayGridEvents.length; i++)
+                    {
+                        let dayGridEvent = dayGridEvents[i];
+
+                        const currentEventElement = dayGridEvent.querySelector(".sgapp-event-cell-wrapper");
+                        const currentEventType = currentEventElement.getAttribute("data-event-type");
+                        const eventType = eventElement.getAttribute("data-event-type");
+
+                        if (currentEventType === eventType)
+                        {
+                            dayGridEvent.style.backgroundColor = `${bgColor}`;
+                            
+                            if (borderColor !== null)
+                            {
+                                dayGridEvent.style.border = `1px solid ${borderColor}`;
+                            }
+                        }
+                    }
+                }
+            }
+
+            onCalendarDateChanged();
         </script>
     </body>
 </html>

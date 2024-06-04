@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
         <!-- Fullcalendar -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" /> -->
 
         <!-- Feather Icon -->
         <script src="https://unpkg.com/feather-icons"></script>
@@ -137,7 +137,7 @@
                         <div class="row">
                             <div class="col-12">
     
-                                <div id='calendar'></div>
+                                <div id='calendar-new'></div>
     
                             </div>
                         </div>
@@ -256,58 +256,114 @@
     
         <!-- Fullcalendar -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
 
         <script type="text/javascript">
             // Load icons
             feather.replace();
 
             // Calendar
-            $(document).ready(function() {
-                let datas = [
-                    {
-                        "id":21,
-                        "organization":"Home Office",
-                        "work_date":"2024-04-28",
-                        "start":"2024-04-28 04:00:00",
-                        "end":"2024-04-28 12:10:00"
-                    },
-                    {
-                        "id":20,
-                        "organization":"Home Office",
-                        "work_date":"2024-04-27",
-                        "start":"2024-04-27 04:21:00",
-                        "end":"2024-04-27 10:25:00"
-                    }
-                ];
+            
+            let datas = [{"id":31,"title":"Rasel Rana","staff_number":"DR841530","first_ame":null,"last_number":null,"email":"rasel@gmail.com","avatar":"h0tiswpvfk1712378330.jpg","start":"2024-05-31 00:20:00","end":"2024-05-31 03:15:00","organization_name":"Radision","color":"#31c943","city":"Dhaka","address":"B\/9 BADC Staff Quarter, Principal Abul Kashem Road, Mirpur 1","zip_code":"1216","country":"Bangladesh","province":"MIrpur","kvk_number":"dsdsdsds","vat_number":"sdsd","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (422) 539-4332","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-05-31"},{"id":32,"title":"Rasel Rana","staff_number":"DR841530","first_ame":null,"last_number":null,"email":"rasel@gmail.com","avatar":"h0tiswpvfk1712378330.jpg","start":"2024-06-11 15:00:00","end":"2024-06-11 08:45:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-06-11"},{"id":33,"title":"Staff2 Staff2","staff_number":"SS800316","first_ame":null,"last_number":null,"email":"staff2@gmail.com","avatar":"avkbccyhag1716826736.jpg","start":"2024-06-03 18:30:00","end":"2024-06-03 22:50:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-06-03"},{"id":34,"title":"Hotel Gaon","staff_number":"HG218977","first_ame":null,"last_number":null,"email":"raselrana1000486@gmail.com","avatar":"i1qgakjcmg1716826605.png","start":"2024-06-07 15:15:00","end":"2024-06-08 13:05:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-07"},{"id":35,"title":"Mehedi Hasan","staff_number":"MH593950","first_ame":null,"last_number":null,"email":"mehedi@gmail.com","avatar":"eemuupxro41716916339.png","start":"2024-06-05 18:30:00","end":"2024-06-06 17:00:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-05"},{"id":36,"title":"Ismail Khan","staff_number":"FF863244","first_ame":null,"last_number":null,"email":"ismail@gmail.com","avatar":"k0xtmnuumq1712228736.png","start":"2024-07-10 18:30:00","end":"2024-05-31 21:00:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-07-10"},{"id":37,"title":"Shakib Khan","staff_number":"RR916694","first_ame":null,"last_number":null,"email":"shakib@gmail.com","avatar":"iug0mp2tji1712228375.png","start":"2024-06-18 18:00:00","end":"2024-06-18 21:00:00","organization_name":"Radision","color":"#31c943","city":"Dhaka","address":"B\/9 BADC Staff Quarter, Principal Abul Kashem Road, Mirpur 1","zip_code":"1216","country":"Bangladesh","province":"MIrpur","kvk_number":"dsdsdsds","vat_number":"sdsd","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (422) 539-4332","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-18"},{"id":38,"title":"Ismail Khan","staff_number":"FF863244","first_ame":null,"last_number":null,"email":"ismail@gmail.com","avatar":"k0xtmnuumq1712228736.png","start":"2024-06-20 18:30:00","end":"2024-05-31 21:00:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-06-20"},{"id":39,"title":"Anthony Shoshi","staff_number":"RR777888","first_ame":null,"last_number":null,"email":"antony@gmail.com","avatar":"x0ljgazfel1714228358.jpg","start":"2024-06-21 18:00:00","end":"2024-06-21 21:00:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-21"},{"id":40,"title":"Mehedi Hasan","staff_number":"MH593950","first_ame":null,"last_number":null,"email":"mehedi@gmail.com","avatar":"eemuupxro41716916339.png","start":"2024-06-15 23:55:00","end":"2024-06-16 22:49:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-15"},{"id":41,"title":"Staff2 Staff2","staff_number":"SS800316","first_ame":null,"last_number":null,"email":"staff2@gmail.com","avatar":"avkbccyhag1716826736.jpg","start":"2024-06-20 15:20:00","end":"2024-06-20 23:55:00","organization_name":"Corendon","color":"#931f1f","city":"13\/3, Road: 2, Shyamoli, Dhaka-1207","address":"fd","zip_code":"1216","country":"Bangladesh","province":"gdfgdf","kvk_number":"44","vat_number":"110","contact_number":"01964719349","help_line":"01964719349","fax_number":"+1 (754) 229-1291","telephone":"01964719349","phone_number":"","leave_status":0,"work_date":"2024-06-20"},{"id":42,"title":"Shakib Khan","staff_number":"RR916694","first_ame":null,"last_number":null,"email":"shakib@gmail.com","avatar":"iug0mp2tji1712228375.png","start":"2024-05-31 09:35:00","end":"2024-05-31 19:00:00","organization_name":"Milton","color":"#000000","city":"fds","address":"fdf","zip_code":"fsd","country":"fsd","province":"fds","kvk_number":"fds","vat_number":"fsd","contact_number":"fds","help_line":"fsd","fax_number":"fds","telephone":"fsd","phone_number":"","leave_status":0,"work_date":"2024-05-31"}];
+            let calendar = null;
 
-                let calendar = $('#calendar').fullCalendar({
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar-new');
+                calendar = new FullCalendar.Calendar(calendarEl, {
                     editable:false,
-                    header:{
-                        left: 'prev',
-                        center: 'title',
-                        right: 'next'
+                    initialView: 'dayGridMonth',
+                    headerToolbar: {
+                        left: '',   //'title'
+                        center: 'dayGridMonth,timeGridWeek,timeGridDay',
+                        right: 'prev,today,next'
                     },
+                    customButtons: {
+                        
+                    },
+                    events: datas,
                     firstDay: 1,
-                    events:datas,
-
-                    eventRender: function(event, element) {
-                        element.find('.fc-title').html('<div class="sga-event-day" data-date=' + event.work_date + ' data-event-type="' + event.type + '"><i class="fa-solid fa-user"></i> '+event.title+'<br>'
-                            +'<i class="fa-solid fa-user"></i> '+event.staff_number+'<br>'
-                            +'<i class="fa-regular fa-clock"></i>  '+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
-                            + '<i class="fa-regular fa-clock"></i>  '+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
+                    eventTimeFormat: { // like '14:30:00'
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        meridiem: false,
+                        hour12: false
                     },
+                    slotLabelFormat: {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                    },
+                    weekNumbers: true,
+                    dayMaxEventRows: true, // for all non-TimeGrid views
+                    views: {
+                        dayGridMonth: {
+                            dayMaxEventRows: 2, // adjust to 6 only for timeGridWeek/timeGridDay
+                            eventLimit: 2
+                        }
+                    },
+                    allDaySlot: false,
+                    eventDidMount: function(args) {
+                        //console.log(args.el);
+                        //console.log(args.event);
 
-                    eventMouseover: function(event, jsEvent, view) {
-                        $(this).addClass('hover');
+                        let event = args.event;
+
+                        const defaultAvatar = "img/avatar_default.png";
+
+                        let avatar = "";//(event.avatar === null) ? defaultAvatar : `https://schedule.bangladeshbajar.com/backend/staff/${event.extendedProps.avatar}`;
+
+                        avatar = "./assets/images/person-fill.svg";
+
+                        let eventHtml = `
+                            <div class="sgapp-event-cell-wrapper" data-event-type="${event.extendedProps.type}">
+                                <div class="sgapp-event-cell-row">
+                                    <span class="sgapp-event-cell-column">
+                                        <img class="sgapp-event-avatar" src="${avatar}" alt="Staff image">
+                                    </span>
+                                    <span class="sgapp-event-cell-column sgapp-event-title">
+                                        ${event.title}
+                                    </span>
+                                </div>
+
+                                <div class="sgapp-event-cell-row sgapp-event-staff-id">
+                                    ${event.extendedProps.staff_number}
+                                </div>
+
+                                <div class="sgapp-event-cell-row sgapp-event-time">
+                                    <i class="fa-regular fa-clock"></i> ${moment(event.start).format('HH:mm')} ${((moment(event.end).format('HH:mm') !== "Invalid date") ? "- " + moment(event.end).format('HH:mm') : "")}
+                                </div>
+                            </div>
+                        `;
+
+                        args.el.innerHTML = eventHtml;
+
+                    },
+                    eventClick: function(args) {
+                        // console.log('Event: ' + args.event.title);
+                        // console.log('Coordinates: ' + args.jsEvent.pageX + ',' + args.jsEvent.pageY);
+                        // console.log('View: ' + args.view.type);
+
+                        // change the border color just for fun
+                        //args.el.style.border = '1px solid red';
+
+                        let url = `schedules/edit/${event.id}`;
+                        window.location.href = url;
+                    },
+                    eventMouseEnter: function (args) {
+                        // console.log("Mouse enter");
+                        // console.log(args);
+
+                        $(args.el).addClass('hover');
                         //console.log(view)
-                        $(this).tooltip({
+                        $(args.el).tooltip({
                             title: '<i class="fa-solid fa-user"></i> Staff Name: '+event.title+'<br>'
                                 + '<i class="fa-solid fa-user"></i> Staff ID: '+event.staff_number+'<br>'
                                 + '<i class="fa-regular fa-clock"></i> Start Time: '+moment(event.start).format('HH:mm')+'<br>'
                                 + '<i class="fa-regular fa-clock"></i> End Time: '+moment(event.end).format('HH:mm')+'<br>'
                                 + '<i class="fa-solid fa-industry"></i> Organization Name: '+event.organization_name+'<br>'
                                 + '<i class="fa-solid fa-location-pin"></i> Address: '+event.address+'<br>'
+
                             ,
                             html: true,
                             container: 'body',
@@ -315,286 +371,264 @@
                             template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="custom-tooltip tooltip-inner"></div></div>',
                         }).tooltip('show');
                     },
-                    eventMouseout: function(event, jsEvent, view) {
+                    eventMouseLeave: function (args) {
+                        // console.log("Mouse leave");
+                        // console.log(args);
+
                         // Remove the hover effect when the mouse leaves
-                        $(this).removeClass('hover');
-                        $(this).tooltip('hide');
-                    },
-                    timeFormat: 'H(:mm)',
-
-                    eventClick:function(event)
-                    {
-                        let eventId = event.id;
-                        
-                        console.log("Open modal for " + eventId);
-
-                        const myModal = new bootstrap.Modal(document.getElementById('editEventModal'));
-
-                        myModal.show();
+                        $(args.el).removeClass('hover');
+                        $(args.el).tooltip('hide');
                     }
                 });
+                calendar.render();
             });
 
+            //Add dropdown in the calendar
             setTimeout(() => {
+                const dropdownWrapper = document.querySelector(".fc-toolbar-chunk");
+                
+                const currentYear = new Date().getFullYear();
+                
+                const months = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ];
+                
+                const currentMonth = months[new Date().getMonth()];
 
-                const calendarButtons = document.querySelectorAll(".fc-button");
-
-                if ((calendarButtons != null) && (calendarButtons.length > 0))
+                const calendarNextMonthButton = document.querySelector(".fc-next-button");
+                const calendarPreviousMonthButton = document.querySelector(".fc-prev-button");
+                const calendarTodayButton = document.querySelector(".fc-today-button");
+                const calendarMonthButton = document.querySelector(".fc-dayGridMonth-button");
+                const calendarWeekButton = document.querySelector(".fc-timeGridWeek-button");
+                const calendarDayButton = document.querySelector(".fc-timeGridDay-button");
+                
+                let optionHtml = "";
+                
+                for (let i = 1; i <= months.length; i++)
                 {
-                    calendarButtons.forEach(calendarButton => {
-                        calendarButton.addEventListener("click", event => {
-                            refreshEventColor();
-                        });
+                    let month = months[i - 1];
+                    let monthIndex = i;
+                    
+                    if (monthIndex <= 9)
+                    {
+                        monthIndex = `0${i}`;
+                    }
+                    
+                    let defaultSelection = "";
+                    
+                    if (currentMonth === month)
+                    {
+                        defaultSelection = "selected";
+                    }
+                    
+                    optionHtml += getMonthSelectOptionTemplate(currentYear, monthIndex, month, defaultSelection);
+                }
+                
+                dropdownWrapper.innerHTML = `
+                    <select id="sgapp-fc-month-select" class="form-select">
+                        ${optionHtml}
+                    </select>
+                `;
+        
+                const calendarMonthSelect = document.querySelector("#sgapp-fc-month-select");
+
+                refreshCalendarMonthSelectEvent();
+
+                function getMonthSelectOptionTemplate(year, monthIndex, month, defaultSelection)
+                {
+                    if (defaultSelection === null)
+                    {
+                        defaultSelection = "";
+                    }
+
+                    return `<option ${defaultSelection} value="${year}-${monthIndex}-01">${month}, ${year}</option>`;
+                }
+
+                function refreshCalendarMonthSelectEvent()
+                {
+                    calendarMonthSelect.addEventListener("change", event => {
+                    
+                        //$('#calendar').fullCalendar('gotoDate', calendarMonthSelect.value);
+                        calendar.gotoDate(calendarMonthSelect.value);
+                        onCalendarDateChanged();
+                        
                     });
                 }
 
-            }, 500);
-
-            function refreshEventColor()
-            {
-                setTimeout(() => {
-
-                let calendarEvents = document.querySelectorAll(".sga-event-day");
-                let calendarDays = document.querySelectorAll(".fc-day");
-
-                if ((calendarEvents != null) && (calendarEvents.length > 0))
+                function getCalendarCurrentDate()
                 {
-                    calendarEvents.forEach(eventElement => {
-                        let date = eventElement.getAttribute("data-date");
-                        let eventType = eventElement.getAttribute("data-event-type");
+                    //let date = new Date($('#calendar').fullCalendar('getDate'));
+                    let date = new Date(calendar.getDate());
 
-                        for (const dayItem of calendarDays)
+                    return date;
+                }
+
+                function getCalendarMonthAsIndex()
+                {
+                    let date = getCalendarCurrentDate();
+                    let monthIndex = date.getMonth();
+
+                    return monthIndex;
+                }
+
+                function refreshCalendarMonthSelect()
+                {
+                    setTimeout(() => {
+                        let date = getCalendarCurrentDate();
+
+                        let monthIndex = date.getMonth() + 1;
+
+                        if (monthIndex <= 9)
                         {
-                            const dateOfTheDay = dayItem.getAttribute("data-date");
+                            monthIndex = `0${monthIndex}`;
+                        }
 
-                            if (dateOfTheDay === date)
+                        let value = `${date.getFullYear()}-${monthIndex}-01`;
+
+                        let options = calendarMonthSelect.querySelectorAll("option");
+
+                        let isMonthFoundInTheSelector = false;
+
+                        if ((options != null) && (options.length > 0))
+                        {
+                            for (let i = 0; i < options.length; i++)
                             {
-                                /*
-                                if (!dayItem.classList.contains("sga-event-day-wrapper"))
-                                {
-                                    dayItem.classList.add("sga-event-day-wrapper");
-                                }*/
-
-                                console.log(eventType);
-
-                                let eventColor = "";
-
-                                if (eventType == "undefined")
-                                {
-                                    eventColor = "#ff0000";
-                                }
+                                let option = options[i];
                                 
-                                dayItem.style.background = eventColor;
-                                eventElement.style.background = eventColor;
-
-                                break;
+                                if (option.value === value)
+                                {
+                                    isMonthFoundInTheSelector = true;
+                                    break;
+                                }
                             }
                         }
+
+                        if (isMonthFoundInTheSelector)
+                        {
+                            calendarMonthSelect.value = value;
+                        }
+                        else
+                        {
+                            let innerHTML = calendarMonthSelect.innerHTML;
+
+                            innerHTML += getMonthSelectOptionTemplate(date.getFullYear(), date.getMonth(), months[date.getMonth()], null);
+
+                            calendarMonthSelect.innerHTML = innerHTML;
+
+                            refreshCalendarMonthSelectEvent();
+
+                            setTimeout(() => {
+                                calendarMonthSelect.value = value;
+                            }, 500);
+                        }
+
+                    }, 500);
+
+                    onCalendarDateChanged();
+                }
+
+                calendarNextMonthButton.addEventListener("click", event => {
+                    refreshCalendarMonthSelect();
+                });
+
+                calendarPreviousMonthButton.addEventListener("click", event => {
+                    refreshCalendarMonthSelect();
+                });
+
+                calendarTodayButton.addEventListener("click", event => {
+                    refreshCalendarMonthSelect();
+                });
+
+                if (calendarMonthButton !== null)
+                {
+                    calendarMonthButton.addEventListener("click", event => {
+                        refreshCalendarMonthSelect();
                     });
                 }
 
+                if (calendarWeekButton !== null)
+                {
+                    calendarWeekButton.addEventListener("click", event => {
+                        refreshCalendarMonthSelect();
+                    });
+                }
+
+                if (calendarDayButton !== null)
+                {
+                    calendarDayButton.addEventListener("click", event => {
+                        refreshCalendarMonthSelect();
+                    });
+                }
+                
+            }, 500);
+
+            
+            function onCalendarDateChanged()
+            {
+                console.log("Date changed");
+
+                setTimeout(() => {
+                    const eventElements = document.querySelectorAll(".sgapp-event-cell-wrapper");
+
+                    if ((eventElements !== null) && (eventElements.length > 0))
+                    {
+                        eventElements.forEach(eventElement => {
+                            setCalendarEventColor(eventElement, "#e5f3f6", "rgba(37, 131, 167, 0.2)");
+                        });
+
+                        eventElements.forEach(eventElement => {
+                            const eventType = eventElement.getAttribute("data-event-type");
+
+                            // Check event condition
+                            if (eventType == "Accepted")
+                            {
+                                setCalendarEventColor(eventElement, "#ff0000"); // color
+                            }
+                        });
+                    }
                 }, 500);
             }
 
-            refreshEventColor();
-
-            /*
-        // Load icons
-        feather.replace();
-        // Calendar
-        $(document).ready(function() {
-
-            $("#timeInput").datepicker({
-                defaultDate: null,
-                firstDay: 1,
-                minDate:1
-            });
-
-            $('#fromInput').timepicker();
-            $('#toInput').timepicker();
-
-            $('body').on('click','.delete-item',function(){
-                let item_id=$(this).attr('item_id');
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    $(this).prop('disabled', true)
-                    $(".spinner-border-delete").removeClass('d-none')
-                    if (result.value) {
-                        $.ajax({
-                            url:$(this).attr('data-action'),
-                            method:'POST',
-                            data:{item_id:item_id},
-                            success:function(response){
-                                Toast.fire({
-                                    icon: response.type,
-                                    title: response.data
-                                });
-                                setInterval(function (){
-                                    window.location.href="https://younitech.xyz/staff/availability"
-                                },3000)
-                            }
-                        });
-                    }else{
-                        $(this).prop('disabled', false)
-                        $(".spinner-border-delete").addClass('d-none')
-                    }
-                });
-            })
-
-            $('body').on('submit','#formSubmit',function(e){
-                e.preventDefault();
-                let formDta = new FormData(this);
-                $(".submitButton").prop('disabled', true)
-                $(".spinner-border-update").removeClass('d-none')
-
-                $.ajax({
-                    url: $(this).attr('data-action'),
-                    method: $(this).attr('method'),
-                    data: formDta,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    success:function(response){
-
-                        if (response.status===200){
-                            Toast.fire({
-                                icon: response.type,
-                                title: response.data
-                            });
-                            setInterval(function (){
-                                window.location.href="https://younitech.xyz/staff/availability"
-                            },3000)
-                        }else{
-                            Swal.fire({
-                                icon: response.type,
-                                title: "Some went wrong",
-                                text: response.data
-                            });
-                        }
-                        $(".submitButton").prop('disabled', false)
-                        $(".spinner-border").addClass('d-none')
-
-                    },
-
-                    error:function(error){
-                        if (error.status===422){
-                            $('.remove-error').text('')
-                            let errors=error.responseJSON.errors
-                            $.each(errors, function (key, val) {
-                                $('.error-'+key).text(val[0])
-                            });
-
-                        }else{
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops...",
-                                text: error.responseJSON.message,
-                            });
-                        }
-                        $(".submitButton").prop('disabled', false)
-                        $(".spinner-border-update").addClass('d-none')
-                    }
-
-                });
-            });
-
-            // full calender
-            let datas = [{"id":20,"work_date":"2024-04-27","start":"2024-04-27 04:21:00","end":"2024-04-27 10:25:00","status":"1"}];
-            let calendar = $('#calendar').fullCalendar({
-                editable:false,
-                header:{
-                    left: 'prev',
-                    center: 'title',
-                    right: 'next'
-                },
-                firstDay: 1,
-                events:datas,
-                eventRender: function(event, element) {
-                    element.find('.fc-title').html('<div class="sga-event-day" data-status='+event.status+' data-date=' + event.work_date + '>'
-                        +'<i class="fa-regular fa-clock"></i>'+'Date: '+event.work_date+'<br/>'
-                        +'<i class="fa-regular fa-clock"></i>'+'Start Time: '+moment(event.start).format('HH:mm') + '<br/>'
-                        + '<i class="fa-regular fa-clock"></i>'+'End Time: '+moment(event.end).format('HH:mm')) + "</div>";
-                },
-
-                eventClick:function(event)
-
-                {
-
-                    if (event.status !==3){
-                        let eventId = event.id;
-                        $.ajax({
-                            url:"https://younitech.xyz/staff/availability-edit",
-                            method:'POST',
-                            data:{eventId:eventId},
-                            success:function(response){
-                                $('.start_time').val(response.data.start_time)
-                                $('.end_time').val(response.data.end_time)
-                                $('.work_date').val(response.data.work_date)
-                                $('.setId').val(response.data.id)
-                                $('.delete-item').attr('item_id',response.data.id)
-
-                                let options='<option value="">Select organization</option>';
-
-                                response.organizations.map((organization,index)=>{
-                                    let select=organization.id==response.data.organization_id ? "selected" : "";
-                                    options+='<option '+select+' value="'+organization.id+'">'+organization.name+'</option>'
-                                })
-                                $('.set-organization').html(options)
-
-                            }
-                        });
-                        const myModal = new bootstrap.Modal(document.getElementById('editEventModal'));
-                        myModal.show();
-                    }
-
-                }
-            });
-        });
-
-
-        setTimeout(() => {
-
-            let calendarEvents = document.querySelectorAll(".sga-event-day");
-            let calendarDays = document.querySelectorAll(".fc-day");
-
-            if ((calendarEvents != null) && (calendarEvents.length > 0))
+            // Calendar event type
+            function setCalendarEventColor(eventElement, bgColor, borderColor)
             {
-                calendarEvents.forEach(eventElement => {
-                    let date = eventElement.getAttribute("data-date");
-                    let status = eventElement.getAttribute("data-status");
+                const dayGridEvents = document.querySelectorAll(".fc-daygrid-event");
 
-                    for (const dayItem of calendarDays)
+                if ((dayGridEvents !== null) && (dayGridEvents.length > 0))
+                {
+                    for (let i = 0; i < dayGridEvents.length; i++)
                     {
-                        const dateOfTheDay = dayItem.getAttribute("data-date");
+                        let dayGridEvent = dayGridEvents[i];
 
-                        if (dateOfTheDay === date)
+                        const currentEventElement = dayGridEvent.querySelector(".sgapp-event-cell-wrapper");
+                        const currentEventType = currentEventElement.getAttribute("data-event-type");
+                        const eventType = eventElement.getAttribute("data-event-type");
+
+                        if (currentEventType === eventType)
                         {
-                            if (!dayItem.classList.contains("sga-event-day-wrapper"))
+                            dayGridEvent.style.backgroundColor = `${bgColor}`;
+                            
+                            if (borderColor !== null)
                             {
-                                console.log(status)
-                                if (status=="3"){
-                                    dayItem.classList.add("sga-event-day-wrapper-pending")
-
-                                }else{
-                                    dayItem.classList.add("sga-event-day-wrapper");
-                                }
+                                dayGridEvent.style.border = `1px solid ${borderColor}`;
                             }
-
-                            break;
                         }
                     }
-                });
+                }
             }
 
-        },100);
-            */
+            onCalendarDateChanged();
         </script>
     </body>
 </html>
