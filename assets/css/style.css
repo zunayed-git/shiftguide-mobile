@@ -376,10 +376,13 @@ textarea
     margin-bottom: 0.5em;
 }
 
-#calendar-new .fc-dayGridMonth-view .fc-daygrid-dot-event
+#calendar-new .fc-dayGridMonth-view .fc-daygrid-dot-event,
+#calendar-new .sgapp-event-cell-wrapper
 {
-    display: none;
-}
+    /* display: none; */
+    background: #dfedef;
+    border: none !important;
+} 
 
 #calendar-new .fc-timegrid-axis-cushion
 {
